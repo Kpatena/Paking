@@ -24,7 +24,7 @@ public class ScoreManager : MonoBehaviour {
 
 		}
 
-		scoreText.text = "" + initialScore;
+		scoreText.text = "Score: " + initialScore.ToString ();
 
 	}
 	
@@ -36,7 +36,8 @@ public class ScoreManager : MonoBehaviour {
 	
 	public static void decreasePoints(){
 
-		initialScore -= 100;
+		if (initialScore > 0)
+			initialScore -= 50;
 
 	}
 }
