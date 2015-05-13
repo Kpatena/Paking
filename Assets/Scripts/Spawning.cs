@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Spawning : MonoBehaviour {
 
-	public float timer = 2f;
+	public float timer = 5f;
+	public float repeat = 5f;
 	private int next = 0;
 	public int carsPerLevel;
 	//  respawns = GameObject.FindGameObjectsWithTag("Respawn");
@@ -22,7 +23,7 @@ public class Spawning : MonoBehaviour {
 			go.tag = "Car" + car;
 			Debug.Log ("Car" + car);
 			go.GetComponent<Car1>().carTag = "Car" + car;
-			timer = Random.Range(5,7);
+			timer = repeat;
 			next++;
 		}
 	}

@@ -4,7 +4,6 @@ using System.Collections;
 public class CollisionIndicator : MonoBehaviour {
 
 	public AudioSource Honk;
-	public int triggerCounter;
 
 	void OnTriggerEnter2D(Collider2D other)
 	{

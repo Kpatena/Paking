@@ -71,6 +71,7 @@ TagManager:
   - Car53
   - Car54
   - Car55
+  - RaceCar1
   layers:
   - Default
   - TransparentFX
