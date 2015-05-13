@@ -62,9 +62,15 @@ TagManager:
   - Car48
   - Car49
   - Car50
-  - 1
+  - DestroyCars
   - Car
-  - CircleCollider
+  - Exit
+  - Wall
+  - Car51
+  - Car52
+  - Car53
+  - Car54
+  - Car55
   layers:
   - Default
   - TransparentFX

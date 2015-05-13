@@ -20,7 +20,11 @@ public class TimeManager : MonoBehaviour {
 
 		if (initialTime <= 0) {
 
-
+				
+			#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+			#endif
+			Application.Quit();
 
 		} else {
 

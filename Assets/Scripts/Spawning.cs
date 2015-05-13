@@ -22,7 +22,7 @@ public class Spawning : MonoBehaviour {
 			go.tag = "Car" + car;
 			Debug.Log ("Car" + car);
 			go.GetComponent<Car1>().carTag = "Car" + car;
-			timer = Random.Range(2,4);
+			timer = Random.Range(5,7);
 			next++;
 		}
 	}

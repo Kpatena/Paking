@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class TimeEllapsed : MonoBehaviour {
 	
-	float minutes = 3;
-	float seconds = 0;
-	float milliseconds = 0; 
+	public float minutes = 3;
+	public float seconds = 0;
+	public float milliseconds = 0; 
 
 	Text text;
 	
@@ -16,7 +16,10 @@ public class TimeEllapsed : MonoBehaviour {
 	
 	void Update(){
 		if (minutes == 0 && seconds == 0) {
-			return;			
+			#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+			#endif
+			Application.Quit();	
 		}
 		if (milliseconds <= 0) {
 			if (seconds <= 0) {

@@ -11,7 +11,6 @@ public class Car1: MonoBehaviour {
 	//check if there is a path tfor it to follow if not keep continously moving in last coord followed.
 	//Values are like in order: 1000, .75, 1.3, .009, Y.085, 0.1
 	public GameObject Car; 
-//	public GameObject follow;
 	public float rotationSpeed = 2f;
 	public float moveSpeed = 1f;
 	public float staticSpeed = 1.5f;
@@ -34,18 +33,28 @@ public class Car1: MonoBehaviour {
 	private float distance;
 	private Vector3 target;
 
-	float seconds = 6;
-	float secondsTwo = 10;
+	float seconds = 11;
+	float secondsTwo = 15;
 	float milliseconds = 0;
 	bool startTimer = true;
 	public GameObject Crash;
 	public GameObject Exclamation;
+	public GameObject CountDown10;
+	public GameObject CountDown9;
+	public GameObject CountDown8;
+	public GameObject CountDown7;
+	public GameObject CountDown6;
 	public GameObject CountDown5;
 	public GameObject CountDown4;
 	public GameObject CountDown3;
 	public GameObject CountDown2;
 	public GameObject CountDown1;
 	private GameObject ReadyToMove;
+	private GameObject Destroy10;
+	private GameObject Destroy9;
+	private GameObject Destroy8;
+	private GameObject Destroy7;
+	private GameObject Destroy6;
 	private GameObject Destroy5;
 	private GameObject Destroy4;
 	private GameObject Destroy3;
@@ -56,6 +65,12 @@ public class Car1: MonoBehaviour {
 	bool draw3 = true;
 	bool draw4 = true;
 	bool draw5 = true;
+	bool draw6 = true;
+	bool draw7 = true;
+	bool draw8 = true;
+	bool draw9 = true;
+	bool draw10 = true;
+
 	bool excMade = false;
 	bool changeBehaviour = false;
 	public bool touchedLot = false;
@@ -147,9 +162,44 @@ public class Car1: MonoBehaviour {
 			/*In this if, we make our countdown and make sure this happens
 			only once.*/
 			if(startTimer == true){
+				if(seconds == 10){
+					if(draw10 == true){
+						draw10 = false;
+						Destroy10 = Instantiate (CountDown10, this.transform.position, Quaternion.Euler (0, 0, 0)) as GameObject;
+					}
+				}
+				if(seconds == 9){
+					if(draw9 == true){
+						draw9 = false;
+						Destroy (Destroy10);
+						Destroy9 = Instantiate (CountDown9, this.transform.position, Quaternion.Euler (0, 0, 0)) as GameObject;
+					}
+				}
+				if(seconds == 8){
+					if(draw8 == true){
+						draw8 = false;
+						Destroy (Destroy9);
+						Destroy8 = Instantiate (CountDown8, this.transform.position, Quaternion.Euler (0, 0, 0)) as GameObject;
+					}
+				}
+				if(seconds == 7){
+					if(draw7 == true){
+						draw7 = false;
+						Destroy (Destroy8);
+						Destroy7 = Instantiate (CountDown7, this.transform.position, Quaternion.Euler (0, 0, 0)) as GameObject;
+					}
+				}
+				if(seconds == 6){
+					if(draw6 == true){
+						draw6 = false;
+						Destroy (Destroy7);
+						Destroy6 = Instantiate (CountDown6, this.transform.position, Quaternion.Euler (0, 0, 0)) as GameObject;
+					}
+				}
 				if(seconds == 5){
 					if(draw5 == true){
 						draw5 = false;
+						Destroy (Destroy6);
 						Destroy5 = Instantiate (CountDown5, this.transform.position, Quaternion.Euler (0, 0, 0)) as GameObject;
 					}
 				}
