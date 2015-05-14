@@ -11,13 +11,20 @@ public class Car1: MonoBehaviour {
 	//check if there is a path tfor it to follow if not keep continously moving in last coord followed.
 	//Values are like in order: 1000, .75, 1.3, .009, Y.085, 0.1
 	public GameObject Car; 
-	public float rotationSpeed = 2f;
-	public float moveSpeed = 1f;
-	public float staticSpeed = 1.5f;
-	public float gap = 0.2f;
+	public float rotationSpeed = 1000f;
+	public float moveSpeed = 0.5f;
+	public float staticSpeed = 0.5f;
+	public float gap = 0.0001f;
 	public Vector3 velocity;
 	public float whenToGoToNextPoint = 0.01f;
 	public string carTag;
+
+	//for after car is moved
+	public float rotationSpeed2;
+	public float moveSpeed2;
+	public float staticSpeed2;
+	public bool isRed;
+	public bool isYellow;
 
 	private Rigidbody2D rb;
 	private Rigidbody2D selectedCar;
@@ -113,8 +120,8 @@ public class Car1: MonoBehaviour {
 		/*When in a parking lot this code will run.*/
 		if (touchedLot == true) {
 
-			this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, rotater, 20 * Time.deltaTime); 
-			this.transform.position = Vector3.MoveTowards(this.transform.position, positioner, 0.75f * Time.deltaTime);
+			this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, rotater, 35 * Time.deltaTime); 
+			this.transform.position = Vector3.MoveTowards(this.transform.position, positioner, 1.5f * Time.deltaTime);
 			if(changeBehaviour == false){
 				changeBehaviour = true;
 				rotationSpeed = 0;
@@ -127,9 +134,9 @@ public class Car1: MonoBehaviour {
 			Destroys exclamation mark and prevents update from running again.*/
 			if(secondsTwo == 0){ 
 				Destroy (ReadyToMove);
-				rotationSpeed = 1000;
-				moveSpeed = 0.25f;
-				staticSpeed = 0.25f;
+				rotationSpeed = rotationSpeed2;
+				moveSpeed = moveSpeed2;
+				staticSpeed = staticSpeed2;
 				if (NorthStall) {
 					velocity.y = -0.25f;
 					NorthStall = false;
@@ -367,6 +374,17 @@ public class Car1: MonoBehaviour {
 			Destroy (Destroy4);
 		else if (Destroy5 != null)
 			Destroy (Destroy5);
+		else if (Destroy6!= null)
+			Destroy (Destroy6);
+		else if (Destroy7 != null)
+			Destroy (Destroy7);
+		else if (Destroy8 != null)
+			Destroy (Destroy8);
+		else if (Destroy9 != null)
+			Destroy (Destroy9);
+		else if (Destroy10 != null)
+			Destroy (Destroy10);
+
 	}
 
 }
