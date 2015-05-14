@@ -25,7 +25,7 @@ public class CollisionIndicator : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D other)
 	{
-		if (other.tag == "Indicator" && this.GetComponentInParent<Car1>().touchedLot == false && other.GetComponentInParent<Car1>().touchedLot == false) {
+		if (other.tag == "Indicator") {
 			this.GetComponent<SpriteRenderer> ().enabled = false;
 		}
 	}
