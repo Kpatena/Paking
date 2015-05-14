@@ -21,7 +21,8 @@ public class CarsCrash : MonoBehaviour
 		/**********************PARKING***************************/
 		if (other.tag == "WestStall") {
 			if (this.GetComponentInParent<Car1>().touchedLot == false && this.GetComponentInParent<Car1>().alreadyParked == false) {
-				if (other.GetComponent<LotBehaviour> () != null) {
+				if (other.GetComponent<LotBehaviour> ().isRed && this.GetComponentInParent<Car1>().isRed || 
+				    other.GetComponent<LotBehaviour> ().isYellow && this.GetComponentInParent<Car1>().isYellow) {
 					this.GetComponentInParent<Car1>().Reset ();
 					this.GetComponentInParent<Car1>().touchedLot = true;
 					this.GetComponentInParent<Car1>().positioner = other.transform.position;
@@ -34,7 +35,8 @@ public class CarsCrash : MonoBehaviour
 
 		if (other.tag == "EastStall") {
 			if (this.GetComponentInParent<Car1>().touchedLot == false && this.GetComponentInParent<Car1>().alreadyParked == false) {
-				if (other.GetComponent<LotBehaviour> () != null) {
+				if (other.GetComponent<LotBehaviour> ().isRed && this.GetComponentInParent<Car1>().isRed || 
+				    other.GetComponent<LotBehaviour> ().isYellow && this.GetComponentInParent<Car1>().isYellow) {
 					this.GetComponentInParent<Car1>().Reset ();
 					this.GetComponentInParent<Car1>().touchedLot = true;
 					this.GetComponentInParent<Car1>().positioner = other.transform.position;
@@ -47,7 +49,8 @@ public class CarsCrash : MonoBehaviour
 
 		if (other.tag == "NorthStall") {
 			if (this.GetComponentInParent<Car1>().touchedLot == false && this.GetComponentInParent<Car1>().alreadyParked == false) {
-				if (other.GetComponent<LotBehaviour> () != null) {
+				if (other.GetComponent<LotBehaviour> ().isRed && this.GetComponentInParent<Car1>().isRed || 
+				    other.GetComponent<LotBehaviour> ().isYellow && this.GetComponentInParent<Car1>().isYellow) {
 					this.GetComponentInParent<Car1>().Reset ();
 					this.GetComponentInParent<Car1>().touchedLot = true;
 					this.GetComponentInParent<Car1>().positioner = other.transform.position;
@@ -60,7 +63,8 @@ public class CarsCrash : MonoBehaviour
 
 		if (other.tag == "SouthStall") {
 			if (this.GetComponentInParent<Car1>().touchedLot == false && this.GetComponentInParent<Car1>().alreadyParked == false) {
-				if (other.GetComponent<LotBehaviour> () != null) {
+				if (other.GetComponent<LotBehaviour> ().isRed && this.GetComponentInParent<Car1>().isRed || 
+				    other.GetComponent<LotBehaviour> ().isYellow && this.GetComponentInParent<Car1>().isYellow) {
 					this.GetComponentInParent<Car1>().Reset ();
 					this.GetComponentInParent<Car1>().touchedLot = true;
 					this.GetComponentInParent<Car1>().positioner = other.transform.position;

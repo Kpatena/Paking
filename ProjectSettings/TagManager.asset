@@ -72,6 +72,16 @@ TagManager:
   - Car54
   - Car55
   - RaceCar1
+  - 1
+  - RaceCar2
+  - RaceCar3
+  - RaceCar4
+  - RaceCar5
+  - RaceCar6
+  - RaceCar7
+  - RaceCar8
+  - RaceCar9
+  - RaceCar10
   layers:
   - Default
   - TransparentFX
