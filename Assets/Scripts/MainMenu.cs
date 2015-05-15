@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour {
 
 	public void LevelSelect(){
 		Application.LoadLevel (play);
+		Time.timeScale = Time.timeScale == 0 ? 1 : 0;
 	}
 	
 	public void Rules(){
