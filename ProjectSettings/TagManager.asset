@@ -82,6 +82,8 @@ TagManager:
   - RaceCar8
   - RaceCar9
   - RaceCar10
+  - 1
+  - CircleCollider
   layers:
   - Default
   - TransparentFX
@@ -118,4 +120,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2790776905
+    locked: 0
+  - name: ForeGround
+    uniqueID: 3455443507
     locked: 0

@@ -309,15 +309,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Car: {fileID: 131040}
   rotationSpeed: 1000
-  moveSpeed: .125
-  staticSpeed: .25
+  moveSpeed: .100000001
+  staticSpeed: .200000003
   gap: 9.99999975e-05
-  velocity: {x: 0, y: .25, z: 0}
+  velocity: {x: 0, y: .200000003, z: 0}
   whenToGoToNextPoint: .00999999978
   carTag: Car
   rotationSpeed2: 1000
-  moveSpeed2: .150000006
-  staticSpeed2: .25
+  moveSpeed2: .100000001
+  staticSpeed2: .200000003
   isRed: 1
   isYellow: 0
   currentWaypoint: 0
@@ -422,7 +422,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2030010815
+  m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 710c3d3c94256784ea92ac4ef1b1d887, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
