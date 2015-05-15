@@ -590,7 +590,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ProtoType Level 2
+          m_StringArgument: ProtoType Level 1
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2d965ea7656a342b41f5529c861bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableStar: 0
+  enableStar: 3000
 --- !u!114 &11455742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -665,7 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2d965ea7656a342b41f5529c861bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableStar: 0
+  enableStar: 2000
 --- !u!114 &11459028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2d965ea7656a342b41f5529c861bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableStar: 0
+  enableStar: 1000
 --- !u!114 &11484466
 MonoBehaviour:
   m_ObjectHideFlags: 1
