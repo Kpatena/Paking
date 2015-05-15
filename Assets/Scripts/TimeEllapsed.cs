@@ -8,6 +8,8 @@ public class TimeEllapsed : MonoBehaviour {
 	public float seconds = 0;
 	public float milliseconds = 0; 
 	bool PopUp = false;
+	private AudioSource Victory;
+	private AudioSource backgroundMusic;
 
 	Text text;
 	
@@ -25,6 +27,8 @@ public class TimeEllapsed : MonoBehaviour {
 				PopUp = true;
 				LevelComplete.PopUp();
 				Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+				Victory = GetComponentInChildren<AudioSource>();
+				Victory.Play ();
 			}
 			return;
 		}

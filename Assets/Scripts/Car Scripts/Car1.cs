@@ -138,16 +138,16 @@ public class Car1: MonoBehaviour {
 				moveSpeed = moveSpeed2;
 				staticSpeed = staticSpeed2;
 				if (NorthStall) {
-					velocity.y = -0.25f;
+					velocity.y = -0.2f;
 					NorthStall = false;
 				} else if (SouthStall){
-					velocity.x = 0.25f;
+					velocity.x = 0.2f;
 					SouthStall = false;
 				} else if (EastStall) {
-					velocity.x = -0.25f;
+					velocity.x = -0.2f;
 					EastStall = false;
 				} else if (WestStall) {
-					velocity.x = 0.25f;
+					velocity.x = 0.2f;
 					WestStall = false;
 				}
 				useCurPos = true;

@@ -6,7 +6,9 @@ public class Spawning : MonoBehaviour {
 	public float timer = 5f;
 	public float repeat = 5f;
 	public int carsPerLevel;
-	private int randomCar = 1;
+	public Transform[] spawnPoints;
+	private int spawnPointIndex;
+	private int randomCar = 0;
 	private int next = 0;
 	//  respawns = GameObject.FindGameObjectsWithTag("Respawn");
 	// Use this for initialization
@@ -18,19 +20,21 @@ public class Spawning : MonoBehaviour {
 	void Update () {
 		timer -= Time.deltaTime;
 
-		if (timer < 0 && next <= carsPerLevel && randomCar == 1) {
+		if (timer < 0 && next <= carsPerLevel && randomCar == 0) {
 			string car = next.ToString();
-			randomCar = Random.Range (1,3);
-			GameObject go = Instantiate (Resources.Load ("YellowCar")) as GameObject;
+			randomCar = Random.Range (0,2);
+			spawnPointIndex = Random.Range (0,spawnPoints.Length);
+			GameObject go = Instantiate (Resources.Load ("YellowCar"), spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation) as GameObject;
 			go.tag = "Car" + car;
 			Debug.Log ("Car" + car);
 			go.GetComponent<Car1>().carTag = "Car" + car;
 			timer = repeat;
 			next++;
-		} else if (timer < 0 && next <= carsPerLevel && randomCar == 2) {
+		} else if (timer < 0 && next <= carsPerLevel && randomCar == 1) {
 			string car = next.ToString();
-			randomCar = Random.Range (1,3);
-			GameObject go = Instantiate (Resources.Load ("RedCar")) as GameObject;
+			randomCar = Random.Range (0,2);
+			spawnPointIndex = Random.Range (0,spawnPoints.Length);
+			GameObject go = Instantiate (Resources.Load ("RedCar"), spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation) as GameObject;
 			go.tag = "Car" + car;
 			Debug.Log ("Car" + car);
 			go.GetComponent<Car1>().carTag = "Car" + car;

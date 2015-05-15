@@ -6,7 +6,9 @@ public class RaceCarSpawner : MonoBehaviour {
 	public float timer = 10f;
 	public float repeat = 10f;
 	public int carsPerLevel;
-	private int randomCar = 1;
+	public Transform[] spawnPoints;
+	private int spawnPointIndex;
+	private int randomCar = 0;
 	private int next = 0;
 	// Use this for initialization
 	void Start () {
@@ -18,10 +20,11 @@ public class RaceCarSpawner : MonoBehaviour {
 	
 		timer -= Time.deltaTime;
 
-		if (timer <= 0 && next <= carsPerLevel && randomCar == 1) {
+		if (timer <= 0 && next <= carsPerLevel && randomCar == 0) {
 			string car = next.ToString();
-			randomCar = Random.Range (1,2);
-			GameObject go = Instantiate (Resources.Load ("YellowRaceCar")) as GameObject;
+			randomCar = Random.Range (0,2);
+			spawnPointIndex = Random.Range (0,spawnPoints.Length);
+			GameObject go = Instantiate (Resources.Load ("YellowRaceCar"), spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation) as GameObject;
 			go.tag = "RaceCar" + car;
 			Debug.Log ("Car" + car);
 			go.GetComponent<Car1>().carTag = "RaceCar" + car;
