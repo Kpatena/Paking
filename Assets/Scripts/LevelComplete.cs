@@ -41,5 +41,6 @@ public class LevelComplete : MonoBehaviour {
 	public void NextLevel(string scene)
 	{
 		Application.LoadLevel (scene);
+		Time.timeScale = 1;
 	}
 }

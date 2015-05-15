@@ -8,7 +8,8 @@ using UnityEditor;
 public class PauseManager : MonoBehaviour {
 	
 	Canvas canvas;
-	
+	public string selectLevel;
+
 	void Start()
 	{
 		// sets canvas to variable and disables
@@ -40,12 +41,6 @@ public class PauseManager : MonoBehaviour {
 	
 	public void Quit()
 	{
-		// stops the editor playing if in editor
-		#if UNITY_EDITOR 
-		EditorApplication.isPlaying = false;
-		// quits application if running standalone
-		#else 
-		Application.Quit();
-		#endif
+		Application.LoadLevel (selectLevel);
 	}
 }
