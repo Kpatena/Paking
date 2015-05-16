@@ -12,20 +12,30 @@ public class MuteButton : MonoBehaviour {
 		savedPressed = PlayerPrefs.GetString ("Pressed");
 		if (savedPressed != null) {
 			if(savedPressed == "hit"){
-				audio.mute = true; 
+				//audio.mute = true;
+				AudioListener.volume = 0;
 			} else {
-				audio.mute = false;
+				//audio.mute = false;
+				AudioListener.volume = 1;
 			}
 		}
 	}
 
 	public void MutePressed (){
-		if (audio.mute) {
-			saveButton("released");
-			audio.mute = false;
+//		//if (audio.mute) {
+//		if (AudioListener.volume == 0){
+//			saveButton("released");
+//			//audio.mute = false;
+//			AudioListener.volume = 1;
+//		}
+		if (AudioListener.volume != 0) {
+			saveButton ("hit");
+			//audio.mute = true;
+			AudioListener.volume = 0;
 		} else {
-			saveButton("hit");
-			audio.mute = true;
+			saveButton("released");
+			//audio.mute = false;
+			AudioListener.volume = 1;
 		}
 	}
 
