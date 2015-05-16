@@ -10,13 +10,16 @@ public class LevelSelect : MonoBehaviour {
 	public string level1;
 	public string level2;
 	public string mainMenu;
+	public static bool didItQuit;
 
 	public void LevelOne(){
 		Application.LoadLevel (level1);
+		Time.timeScale = Time.timeScale == 0 ? 1 : 0;
 	}
 
 	public void LevelTwo(){
 		Application.LoadLevel (level2);
+		Time.timeScale = Time.timeScale == 0 ? 1 : 0;
 	}
 
 	public void PressedBack(){

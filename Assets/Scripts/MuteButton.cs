@@ -5,23 +5,31 @@ using UnityEngine.Audio;
 public class MuteButton : MonoBehaviour {
 
 	public static AudioSource audio;
-	public static bool pressed;
+	string savedPressed;
 
 	void Awake() {
 		audio = GetComponent<AudioSource>();
-		if(LevelComplete.isPressed == false){
-			audio.mute = true;
+		savedPressed = PlayerPrefs.GetString ("Pressed");
+		if (savedPressed != null) {
+			if(savedPressed == "hit"){
+				audio.mute = true; 
+			} else {
+				audio.mute = false;
+			}
 		}
 	}
 
 	public void MutePressed (){
-		//DontDestroyOnLoad (this);
 		if (audio.mute) {
-			pressed = true;
+			saveButton("released");
 			audio.mute = false;
 		} else {
-			pressed = false;
+			saveButton("hit");
 			audio.mute = true;
 		}
+	}
+
+	public void saveButton (string pressed){
+		PlayerPrefs.SetString ("Pressed", pressed);
 	}
 }

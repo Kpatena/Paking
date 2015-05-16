@@ -8,7 +8,6 @@ using UnityEditor;
 public class LevelComplete : MonoBehaviour {
 	
 	public static Canvas canvas;
-	public static bool isPressed = true;
 
 	void Start()
 	{
@@ -23,13 +22,7 @@ public class LevelComplete : MonoBehaviour {
 	}
 	
 	public void restartScene(string scene){
-		isPressed = MuteButton.pressed;
 		Application.LoadLevel (scene);
-//		if (isPressed == true) {
-//			MuteButton.audio.mute = false;
-//		} else {
-//			MuteButton.audio.mute = true;
-//		}
 		Time.timeScale = Time.timeScale == 0 ? 1 : 0;
 	}
 	
