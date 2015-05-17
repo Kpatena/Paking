@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ScoreSubmission : MonoBehaviour {
 	public InputField input;
+	public int Parkinglevel;
 	public Text text; 
 	public Highscore[] highscoresList;
 	const string privateCode = "_t76kvIZnkqSMK-ecp76CQLbxRBp4CJE6GHdLKmdUV0A";
@@ -18,17 +19,17 @@ public class ScoreSubmission : MonoBehaviour {
 	
 	private void SubmitName(string arg0)
 	{
-		AddNewHighscore(arg0, ScoreManager.initialScore);
+		AddNewHighscore(arg0, ScoreManager.initialScore, Parkinglevel);
 		text.text = "";
 		DownloadHighscores ();
 	}
 
-	public void AddNewHighscore(string username, int score) {
-		StartCoroutine (UploadNewHighscore (username, score));
+	public void AddNewHighscore(string username, int score, int level) {
+		StartCoroutine (UploadNewHighscore (username, score, level));
 	}
 	
-	IEnumerator UploadNewHighscore(string username, int score) {
-		WWW www = new WWW (webURL + privateCode + "/add/" + WWW.EscapeURL (username) + "/" + score);
+	IEnumerator UploadNewHighscore(string username, int score, int level) {
+		WWW www = new WWW (webURL + privateCode + "/add/" + WWW.EscapeURL (username + level.ToString ()) + "/" + score + "/" + level);
 		yield return www;
 		
 		if (string.IsNullOrEmpty (www.error))
@@ -60,18 +61,27 @@ public class ScoreSubmission : MonoBehaviour {
 			string[] entryInfo = entries[i].Split (new char[] {'|'});
 			string username = entryInfo[0];
 			int score = int.Parse (entryInfo[1]);
-			highscoresList[i] = new Highscore(username, score);
-			text.text += string.Format ("{0,-10} {1,-20}\n", highscoresList[i].username, highscoresList[i].score);
+			int level = int.Parse (entryInfo[2]);
+			highscoresList[i] = new Highscore(username, score, level);
+			if(highscoresList[i].level == Parkinglevel) {
+				Debug.Log (highscoresList[i].username + highscoresList[i].score +highscoresList[i].level);
+				text.text += string.Format ("{0,-10} {1,-20}\n", highscoresList[i].username, highscoresList[i].score);
+			} else {
+				text.text = "";
+			}
 		}
 	}
 }
 
 public struct Highscore {
 	public string username;
+	public int level;
 	public int score;
 
-	public Highscore( string _username, int _score) {
+	public Highscore( string _username, int _score, int _level) {
 		username = _username;
 		score = _score;
+		level = _level;
+
 	}
 }

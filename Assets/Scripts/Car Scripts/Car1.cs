@@ -25,6 +25,10 @@ public class Car1: MonoBehaviour {
 	public float staticSpeed2;
 	public bool isRed;
 	public bool isYellow;
+	public float nSpeed;
+	public float sSpeed;
+	public float eSpeed;
+	public float wSpeed;
 
 	private Rigidbody2D rb;
 	private Rigidbody2D selectedCar;
@@ -128,6 +132,7 @@ public class Car1: MonoBehaviour {
 				moveSpeed = 0;
 				staticSpeed = 0;
 				velocity.y = 0;
+				velocity.x = 0;
 			}
 			
 			/*Our countdown for when the car can start moving again. 
@@ -138,16 +143,16 @@ public class Car1: MonoBehaviour {
 				moveSpeed = moveSpeed2;
 				staticSpeed = staticSpeed2;
 				if (NorthStall) {
-					velocity.y = -0.2f;
+					velocity.y = nSpeed;
 					NorthStall = false;
 				} else if (SouthStall){
-					velocity.x = 0.2f;
+					velocity.y = sSpeed;
 					SouthStall = false;
 				} else if (EastStall) {
-					velocity.x = -0.2f;
+					velocity.x = eSpeed;
 					EastStall = false;
 				} else if (WestStall) {
-					velocity.x = 0.2f;
+					velocity.x = wSpeed;
 					WestStall = false;
 				}
 				useCurPos = true;
