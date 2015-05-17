@@ -65,10 +65,9 @@ public class ScoreSubmission : MonoBehaviour {
 			highscoresList[i] = new Highscore(username, score, level);
 			if(highscoresList[i].level == Parkinglevel) {
 				Debug.Log (highscoresList[i].username + highscoresList[i].score +highscoresList[i].level);
-				text.text += string.Format ("{0,-10} {1,-20}\n", highscoresList[i].username, highscoresList[i].score);
-			} else {
-				text.text = "";
-			}
+				highscoresList[i].username = highscoresList[i].username.Remove (highscoresList[i].username.Length - 1);
+				text.text += string.Format ("{0,-10} {1, -20} \n", highscoresList[i].username, highscoresList[i].score);
+			} 
 		}
 	}
 }
