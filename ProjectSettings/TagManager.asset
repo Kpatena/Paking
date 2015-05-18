@@ -82,8 +82,37 @@ TagManager:
   - RaceCar8
   - RaceCar9
   - RaceCar10
-  - 1
-  - CircleCollider
+  - Car56
+  - Car57
+  - Car58
+  - Car59
+  - Car60
+  - RaceCar11
+  - RaceCar12
+  - RaceCar13
+  - RaceCar14
+  - RaceCar15
+  - Truck0
+  - Truck1
+  - Truck2
+  - Truck3
+  - Truck4
+  - Truck5
+  - Truck6
+  - Truck7
+  - Truck8
+  - Truck9
+  - Truck10
+  - Truck11
+  - Truck12
+  - Truck13
+  - Truck14
+  - Truck15
+  - Truck16
+  - Truck17
+  - Truck18
+  - Truck19
+  - Truck20
   layers:
   - Default
   - TransparentFX

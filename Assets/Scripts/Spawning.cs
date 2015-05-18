@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Spawning : MonoBehaviour {
 
+	public string whichRedPrefab;
+	public string whichYellowPrefab;
 	public float timer = 5f;
 	public float repeat = 5f;
 	public int carsPerLevel;
@@ -24,7 +26,7 @@ public class Spawning : MonoBehaviour {
 			string car = next.ToString();
 			randomCar = Random.Range (0,2);
 			spawnPointIndex = Random.Range (0,spawnPoints.Length);
-			GameObject go = Instantiate (Resources.Load ("YellowCar"), spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation) as GameObject;
+			GameObject go = Instantiate (Resources.Load (whichYellowPrefab), spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation) as GameObject;
 			go.tag = "Car" + car;
 			Debug.Log ("Car" + car);
 			go.GetComponent<Car1>().carTag = "Car" + car;
@@ -34,7 +36,7 @@ public class Spawning : MonoBehaviour {
 			string car = next.ToString();
 			randomCar = Random.Range (0,2);
 			spawnPointIndex = Random.Range (0,spawnPoints.Length);
-			GameObject go = Instantiate (Resources.Load ("RedCar"), spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation) as GameObject;
+			GameObject go = Instantiate (Resources.Load (whichRedPrefab), spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation) as GameObject;
 			go.tag = "Car" + car;
 			Debug.Log ("Car" + car);
 			go.GetComponent<Car1>().carTag = "Car" + car;
