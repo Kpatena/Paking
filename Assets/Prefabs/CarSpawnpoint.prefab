@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .910000026, y: -2.27999997, z: 0}
+  m_LocalPosition: {x: -1.21000004, y: -2.07999992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,10 +42,11 @@ MonoBehaviour:
   whichRedPrefab: NRedCar
   whichYellowPrefab: NYellowCar
   timer: 2
-  repeat: 8
+  repeat: 6
   carsPerLevel: 60
   spawnPoints:
   - {fileID: 425818}
+  - {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
