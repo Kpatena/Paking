@@ -9,7 +9,10 @@ public class TimeEllapsed : MonoBehaviour {
 	public float milliseconds = 0; 
 	bool PopUp = false;
 	private AudioSource Victory;
+	private Image collision;
 	private AudioSource backgroundMusic;
+	private int noCollisions;
+	private int allStars;
 
 	Text text;
 	
@@ -29,6 +32,9 @@ public class TimeEllapsed : MonoBehaviour {
 				Time.timeScale = Time.timeScale == 0 ? 1 : 0;
 				Victory = GetComponentInChildren<AudioSource>();
 				Victory.Play ();
+//				if (PlayerPrefs.GetInt ("NC") == 1 && noCollisions == true) {
+//					collision = GetComponentInChildren<Image>();
+//				}
 			}
 			return;
 		}
@@ -44,4 +50,5 @@ public class TimeEllapsed : MonoBehaviour {
 		milliseconds -= Time.deltaTime * 100;
 		text.text = string.Format ("{0:0}:{1:00}", minutes, seconds);
 	}
+
 }

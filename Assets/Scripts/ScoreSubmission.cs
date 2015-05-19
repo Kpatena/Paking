@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class ScoreSubmission : MonoBehaviour {
-	public InputField input;
+	public Button b;
 	public int Parkinglevel;
 	public Text text; 
 	public Highscore[] highscoresList;
@@ -13,13 +13,13 @@ public class ScoreSubmission : MonoBehaviour {
 
 	void Start ()
 	{
-		input.onEndEdit.AddListener(SubmitName);  // This also works
+		b.onClick.AddListener(SubmitName);  // This also works
 		DownloadHighscores ();
 	}
 	
-	private void SubmitName(string arg0)
+	private void SubmitName()
 	{
-		AddNewHighscore(arg0, ScoreManager.initialScore, Parkinglevel);
+		AddNewHighscore(PlayerPrefs.GetString ("Username"), ScoreManager.initialScore, Parkinglevel);
 		text.text = "";
 		DownloadHighscores ();
 	}

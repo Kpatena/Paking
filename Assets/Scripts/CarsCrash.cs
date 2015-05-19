@@ -5,7 +5,8 @@ public class CarsCrash : MonoBehaviour
 {
 	public GameObject Crash;
 	public GameObject Car;
-	
+	public bool crashed = false;
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 
@@ -16,6 +17,9 @@ public class CarsCrash : MonoBehaviour
 			ScoreManager.decreasePoints ();
 			Instantiate (Crash, this.transform.position, this.transform.rotation); 
 			Destroy (Car);
+			crashed = true;
+			PlayerPrefs.SetInt ("NC", 0);
+			PlayerPrefs.Save ();
 		}
 
 		/**********************PARKING***************************/
@@ -90,6 +94,8 @@ public class CarsCrash : MonoBehaviour
 			ScoreManager.decreasePoints ();
 			Instantiate (Crash, this.transform.position, this.transform.rotation); 
 			Destroy (Car);
+			PlayerPrefs.SetInt ("NC", 1);
+			PlayerPrefs.Save ();
 		}
 	}
 }
