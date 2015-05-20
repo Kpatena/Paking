@@ -79,6 +79,13 @@ public class CarsCrash : MonoBehaviour
 			}
 		}
 
+		/************************PORTALS**************************/
+		if (other.tag == "bluePortal") {
+			if(this.GetComponentInParent<Car1>().touchedPortal == false){
+				this.GetComponentInParent<Car1>().touchedPortal = true;
+			}
+		}
+
 		/************************EXITING**************************/
 		if (other.tag == "Exit" && this.GetComponentInParent<Car1>().alreadyParked) {
 			ScoreManager.addPoints (100);

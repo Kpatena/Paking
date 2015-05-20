@@ -48,6 +48,7 @@ public class Car1: MonoBehaviour {
 	float secondsTwo = 15;
 	float milliseconds = 0;
 	bool startTimer = true;
+	public GameObject orangePortal;
 	public GameObject Crash;
 	public GameObject Exclamation;
 	public GameObject CountDown10;
@@ -94,6 +95,7 @@ public class Car1: MonoBehaviour {
 	public bool WestStall = false;
 	public bool EastStall = false;
 	public bool Destroyed = false;
+	public bool touchedPortal = false;
 
 
 	public List<Vector3> waypoints = new List<Vector3>();
@@ -256,6 +258,19 @@ public class Car1: MonoBehaviour {
 				milliseconds -= Time.deltaTime * 100;
 			}
 			return;
+		}
+
+		//*******************PORTALS**********************//
+		if (touchedPortal == true) {
+			target = waypoints [currentWaypoint];
+			movedirection = target - transform.position;
+			velocity = movedirection.normalized * staticSpeed;
+			this.transform.position = orangePortal.transform.position;
+			// SET STATIC SPEED
+			//velocity.x = eSpeed;
+			rb.velocity = velocity;
+			Reset();
+			touchedPortal = false;
 		}
 
 		//*******************MOVING***********************//
