@@ -78,9 +78,27 @@ public class CarsCrash : MonoBehaviour
 		}
 
 		/************************PORTALS**************************/
+		if (other.tag == "redPortal") {
+			if(this.GetComponentInParent<Car1>().touchedOPortal == false){
+				this.GetComponentInParent<Car1>().touchedOPortal = true;
+			}
+		}
+
+		if (other.tag == "orangePortal") {
+			if(this.GetComponentInParent<Car1>().touchedRPortal == false){
+				this.GetComponentInParent<Car1>().touchedRPortal = true;
+			}
+		}
+
+		if (other.tag == "tealPortal") {
+			if(this.GetComponentInParent<Car1>().touchedBPortal == false){
+				this.GetComponentInParent<Car1>().touchedBPortal = true;
+			}
+		}
+
 		if (other.tag == "bluePortal") {
-			if(this.GetComponentInParent<Car1>().touchedPortal == false){
-				this.GetComponentInParent<Car1>().touchedPortal = true;
+			if(this.GetComponentInParent<Car1>().touchedTPortal == false){
+				this.GetComponentInParent<Car1>().touchedTPortal = true;
 			}
 		}
 

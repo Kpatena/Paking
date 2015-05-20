@@ -49,6 +49,9 @@ public class Car1: MonoBehaviour {
 	float milliseconds = 0;
 	bool startTimer = true;
 	public GameObject orangePortal;
+	public GameObject redPortal;
+	public GameObject bluePortal;
+	public GameObject tealPortal;
 	public GameObject Crash;
 	public GameObject Exclamation;
 	public GameObject CountDown10;
@@ -95,8 +98,10 @@ public class Car1: MonoBehaviour {
 	public bool WestStall = false;
 	public bool EastStall = false;
 	public bool Destroyed = false;
-	public bool touchedPortal = false;
-
+	public bool touchedOPortal = false;
+	public bool touchedBPortal = false;
+	public bool touchedRPortal = false;
+	public bool touchedTPortal = false;
 
 	public List<Vector3> waypoints = new List<Vector3>();
 
@@ -261,16 +266,37 @@ public class Car1: MonoBehaviour {
 		}
 
 		//*******************PORTALS**********************//
-		if (touchedPortal == true) {
-			target = waypoints [currentWaypoint];
-			movedirection = target - transform.position;
-			velocity = movedirection.normalized * staticSpeed;
+		if (touchedOPortal == true) {
 			this.transform.position = orangePortal.transform.position;
-			// SET STATIC SPEED
-			//velocity.x = eSpeed;
-			rb.velocity = velocity;
+			velocity.x = eSpeed;
 			Reset();
-			touchedPortal = false;
+			touchedOPortal = false;
+		}
+
+		if (touchedRPortal == true) {
+			this.transform.position = redPortal.transform.position;
+			velocity.x = wSpeed;
+			Reset();
+			touchedRPortal = false;
+		}
+
+		if (touchedTPortal == true) {
+			this.transform.position = tealPortal.transform.position;
+			velocity.x = wSpeed;
+			Reset();
+			touchedTPortal = false;
+		}
+
+		if (touchedBPortal == true) {
+			//			target = waypoints [currentWaypoint];
+			//			movedirection = target - transform.position;
+			//			velocity = movedirection.normalized * staticSpeed;
+			this.transform.position = bluePortal.transform.position;
+			//SET STATIC SPEED
+			velocity.x = eSpeed;
+			//			rb.velocity = velocity;
+			Reset();
+			touchedBPortal = false;
 		}
 
 		//*******************MOVING***********************//

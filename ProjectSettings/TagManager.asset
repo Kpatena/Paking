@@ -115,6 +115,8 @@ TagManager:
   - Truck20
   - bluePortal
   - orangePortal
+  - tealPortal
+  - redPortal
   layers:
   - Default
   - TransparentFX

@@ -326,7 +326,10 @@ MonoBehaviour:
   wSpeed: .200000003
   currentWaypoint: 0
   countWaypoints: 0
-  orangePortal: {fileID: 192638, guid: 8431dc363ec9bc24cb387f5b395ee172, type: 2}
+  orangePortal: {fileID: 159342, guid: 8431dc363ec9bc24cb387f5b395ee172, type: 2}
+  redPortal: {fileID: 161426, guid: 50f7f3034bf8f5a4c8d2510769f8817d, type: 2}
+  bluePortal: {fileID: 173854, guid: da13fe87512b9ac488dae307d1848ab0, type: 2}
+  tealPortal: {fileID: 131464, guid: e82395d26f256ce45852a19020240a9c, type: 2}
   Crash: {fileID: 196602, guid: 5a19948186fc72d438e5f01b3490f65b, type: 2}
   Exclamation: {fileID: 185090, guid: 7d0d055499563d345aed3f72c78cebea, type: 2}
   CountDown10: {fileID: 161228, guid: a33854cfa4598074cb4b17e7efa07bd9, type: 2}
@@ -349,7 +352,10 @@ MonoBehaviour:
   WestStall: 0
   EastStall: 0
   Destroyed: 0
-  touchedPortal: 0
+  touchedOPortal: 0
+  touchedBPortal: 0
+  touchedRPortal: 0
+  touchedTPortal: 0
   waypoints: []
   pathPoints: []
   pathLine: {fileID: 12038348, guid: 46eeceb54c7890d46aa2f9e7214de858, type: 2}
