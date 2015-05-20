@@ -113,6 +113,8 @@ TagManager:
   - Truck18
   - Truck19
   - Truck20
+  - bluePortal
+  - orangePortal
   layers:
   - Default
   - TransparentFX

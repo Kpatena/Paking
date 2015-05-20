@@ -290,6 +290,7 @@ MonoBehaviour:
   wSpeed: 0
   currentWaypoint: 0
   countWaypoints: 0
+  orangePortal: {fileID: 192638, guid: 8431dc363ec9bc24cb387f5b395ee172, type: 2}
   Crash: {fileID: 196602, guid: 5a19948186fc72d438e5f01b3490f65b, type: 2}
   Exclamation: {fileID: 185090, guid: 7d0d055499563d345aed3f72c78cebea, type: 2}
   CountDown10: {fileID: 161228, guid: a33854cfa4598074cb4b17e7efa07bd9, type: 2}
@@ -312,6 +313,7 @@ MonoBehaviour:
   WestStall: 0
   EastStall: 0
   Destroyed: 0
+  touchedPortal: 0
   waypoints: []
   pathPoints: []
   pathLine: {fileID: 12038348, guid: 46eeceb54c7890d46aa2f9e7214de858, type: 2}
@@ -329,6 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Crash: {fileID: 196602, guid: 5a19948186fc72d438e5f01b3490f65b, type: 2}
   Car: {fileID: 141306}
+  crashed: 0
 --- !u!114 &11407346
 MonoBehaviour:
   m_ObjectHideFlags: 1
