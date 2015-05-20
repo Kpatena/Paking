@@ -17,6 +17,7 @@ public class ScoreSubmission : MonoBehaviour {
 		DownloadHighscores ();
 	}
 	
+
 	private void SubmitName()
 	{
 		AddNewHighscore(PlayerPrefs.GetString ("Username"), ScoreManager.initialScore, Parkinglevel);

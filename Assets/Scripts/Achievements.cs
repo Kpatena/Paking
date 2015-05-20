@@ -10,66 +10,53 @@ public class Achievements : MonoBehaviour {
 
 	Canvas canvas;
 
-	public static bool noCollisions = false;
-	public static bool allStars = false;
-	public static bool BeaTENtheGame = false;
 	public Button b;
-	public Cheeves[] AchieveList;
 	const string privateCode = "rPORE27MGUeUnYiDZ4KB5gKvFn881dpUqi2JEfrNG14g";
 	const string publicCode = "5559b8cc6e51b6238c7462d4";
 	const string webURL = "http://dreamlo.com/lb/";
-
-	public Image star;
-	public Image ten; 
-	public Image collision;
 	
 	void Start ()
 	{
-		star = star.GetComponent<Image> ();
-		ten = ten.GetComponent<Image> ();
-		collision = collision.GetComponent<Image> ();
 
-		Debug.Log (PlayerPrefs.GetInt ("NC"));
 		canvas = GetComponent<Canvas>();
 		canvas.enabled = false;
-		b.onClick.AddListener(CheckAchievements);  // This also works
 	}
 	
-	private void CheckAchievements()
-	{
-		if (PlayerPrefs.GetInt ("NC") == 1) {
-			Color c = collision.color;
-			c.a = 1f;
-			collision.color = c;
-			noCollisions = true;
-		} else {
-			Color c = collision.color;
-			c.a = 0.5f;
-			collision.color = c;
-		}
-
-		if (PlayerPrefs.GetInt ("AS") == 1) {
-			Color c = star.color;
-			c.a = 1f;
-			star.color = c;
-			allStars = true;
-		} else {
-			Color c = star.color;
-			c.a = 0.5f;
-			star.color = c;
-		}
-
-		if (PlayerPrefs.GetInt ("BT") == 1) {
-			Color c = ten.color;
-			c.a = 1f;
-			ten.color = c;
-			BeaTENtheGame = true;
-		} else {
-			Color c = ten.color;
-			c.a = 0.5f;
-			ten.color = c;
-		}
-	}
+//	private void CheckAchievements()
+//	{
+//		if (PlayerPrefs.GetInt ("NC") == 1) {
+//			Color c = collision.color;
+//			c.a = 1f;
+//			collision.color = c;
+//			Debug.Log ("Worked NC");
+//		} else {
+//			Color c = collision.color;
+//			c.a = 0.5f;
+//			collision.color = c;
+//			Debug.Log ("Not Worked NC");
+//		}
+//
+//		if (PlayerPrefs.GetInt ("AS") == 1) {
+//			Color c = star.color;
+//			c.a = 1f;
+//			star.color = c;
+//			Debug.Log ("Worked AS");
+//		} else {
+//			Color c = star.color;
+//			c.a = 0.5f;
+//			star.color = c;
+//		}
+//
+//		if (PlayerPrefs.GetInt ("BT") == 1) {
+//			Color c = ten.color;
+//			c.a = 1f;
+//			ten.color = c;
+//		} else {
+//			Color c = ten.color;
+//			c.a = 0.5f;
+//			ten.color = c;
+//		}
+//	}
 
 
 //	//*****Add*****//
@@ -133,16 +120,33 @@ public class Achievements : MonoBehaviour {
 	}
 }
 
-public struct Cheeves {
+public struct NC{
 	public string username;
 	public int noCollisions;
-	public int allStar;
-	public int beaten;
 	
-	public Cheeves(string _username, int _noCollisions, int _allStar, int _beaten) {
+	public NC(string _username, int _noCollisions) {
 		username = _username;
 		noCollisions = _noCollisions;
+		
+	}
+}
+
+public struct AS{
+	public string username;
+	public int allStar;
+
+	public AS(string _username, int _allStar) {
+		username = _username;
 		allStar = _allStar;
+	}
+}
+
+public struct BT{
+	public string username;
+	public int beaten;
+	
+	public BT(string _username, int _beaten) {
+		username = _username;
 		beaten = _beaten;
 		
 	}
