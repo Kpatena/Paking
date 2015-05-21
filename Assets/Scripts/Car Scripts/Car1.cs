@@ -312,6 +312,7 @@ public class Car1: MonoBehaviour {
 					if(selectedCar.mass == 1) {
 						Reset();
 						carSelected = true;
+						useCurPos = true;
 					}
 
 				} else {

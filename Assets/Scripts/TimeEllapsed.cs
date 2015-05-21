@@ -57,7 +57,7 @@ public class TimeEllapsed : MonoBehaviour {
 					AddASAchievement(PlayerPrefs.GetString ("Username") + ast, 1);
 				}
 
-				if(ifLevel10) {
+				if(ifLevel10 && ScoreManager.initialScore >= 2500) {
 					BT.GetComponent<Image>().enabled = true;
 					AddBTAchievement(PlayerPrefs.GetString ("Username") + beat, 1);
 				}
