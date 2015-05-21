@@ -1336,11 +1336,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22491772, guid: eb71ba8bb9ee9944d98030a844be4d92, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 420
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 22491772, guid: eb71ba8bb9ee9944d98030a844be4d92, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 220
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 22491772, guid: eb71ba8bb9ee9944d98030a844be4d92, type: 2}
       propertyPath: m_SizeDelta.x
