@@ -1598,22 +1598,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11400594, guid: 0477d9db1d0427045bc00391cd062584, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 71899977}
-    - target: {fileID: 11460424, guid: 0477d9db1d0427045bc00391cd062584, type: 2}
-      propertyPath: seconds
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11460424, guid: 0477d9db1d0427045bc00391cd062584, type: 2}
-      propertyPath: minutes
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11460424, guid: 0477d9db1d0427045bc00391cd062584, type: 2}
-      propertyPath: showNoCollisions
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 11460424, guid: 0477d9db1d0427045bc00391cd062584, type: 2}
       propertyPath: collision
       value: 
@@ -1626,10 +1610,10 @@ Prefab:
       propertyPath: BT
       value: 
       objectReference: {fileID: 68322284}
-    - target: {fileID: 11460424, guid: 0477d9db1d0427045bc00391cd062584, type: 2}
-      propertyPath: ifLevel10
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 11400594, guid: 0477d9db1d0427045bc00391cd062584, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 71899977}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0477d9db1d0427045bc00391cd062584, type: 2}
   m_IsPrefabParent: 0
